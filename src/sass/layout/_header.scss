@@ -1,5 +1,174 @@
 @use '../util' as u;
 
 .header {
+  width: min(100%, u.rem(1440));
+  display: flex;
+  justify-content: space-between;
   padding: u.rem(24) u.rem(16);
+
+  @include u.breakpoint(large) {
+    padding: u.rem(21) u.rem(40);
+  }
+
+  &__logo {
+    display: flex;
+    width: max-content;
+    height: max-content;
+  }
+
+  &__open-btn,
+  &__close-btn {
+    width: min-content;
+    height: min-content;
+
+    @include u.breakpoint(medium) {
+      display: none;
+    }
+  }
+
+  &__close-btn {
+    align-self: flex-end;
+    margin-block-end: u.rem(35);
+  }
+
+  .active &__open-btn {
+    display: none;
+  }
+
+  &__nav {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--clr-almost-white);
+    padding: u.rem(21) u.rem(20) u.rem(24) u.rem(24);
+    z-index: 100;
+  }
+
+  &__overlay {
+    width: 100vw;
+    min-height: 100vh;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--clr-almost-black);
+    opacity: 0.8;
+  }
+
+  .active &__overlay {
+    display: block;
+  }
+
+  &__list,
+  &__dropdown__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: u.rem(26);
+  }
+
+  &__item {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    column-gap: u.rem(15);
+  }
+
+  &__button {
+    column-gap: u.rem(16);
+  }
+
+  &__dropdown {
+    padding-block-start: u.rem(26);
+    padding-inline-start: u.rem(24);
+  }
 }
+
+// .header__logo {
+//   display: flex;
+//   width: max-content;
+//   height: max-content;
+// }
+
+// .header__open-btn,
+// .header__close-btn {
+//   width: min-content;
+//   height: min-content;
+
+//   @include u.breakpoint(medium) {
+//     display: none;
+//   }
+// }
+
+// .header__close-btn {
+//   align-self: flex-end;
+//   margin-block-end: u.rem(35);
+// }
+
+// .active .header__open-btn {
+//   display: none;
+// }
+
+// .header__nav {
+//   min-height: 100vh;
+//   display: flex;
+//   flex-direction: column;
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   background-color: var(--clr-almost-white);
+//   padding: u.rem(21) u.rem(20) u.rem(24) u.rem(24);
+//   z-index: 100;
+// }
+
+// .header__overlay {
+//   width: 100vw;
+//   min-height: 100vh;
+//   display: none;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   background-color: var(--clr-almost-black);
+//   opacity: 0.8;
+// }
+
+// .active .header__overlay {
+//   display: block;
+// }
+
+// .header__list,
+// .header__dropdown__list {
+//   display: flex;
+//   flex-direction: column;
+//   row-gap: u.rem(26);
+// }
+
+// .header__item {
+//   display: inline-flex;
+//   flex-direction: column;
+//   align-items: flex-start;
+//   justify-content: center;
+// }
+
+// .header__link {
+//   display: inline-flex;
+//   align-items: center;
+//   column-gap: u.rem(15);
+// }
+
+// .header__button {
+//   column-gap: u.rem(16);
+// }
+
+// .header__dropdown {
+//   padding-block-start: u.rem(26);
+//   padding-inline-start: u.rem(24);
+// }
