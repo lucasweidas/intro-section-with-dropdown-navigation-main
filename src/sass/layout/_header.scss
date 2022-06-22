@@ -1,0 +1,5 @@
+@use '../util' as u;
+
+.header {
+  padding: u.rem(24) u.rem(16);
+}
