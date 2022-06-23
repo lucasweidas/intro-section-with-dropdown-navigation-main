@@ -10,7 +10,9 @@ h1 {
 
 a,
 button {
+  font-family: u.$font;
   font-size: u.rem(16);
+  font-weight: 500;
 
   @include u.breakpoint(large) {
     font-size: u.rem(14);
