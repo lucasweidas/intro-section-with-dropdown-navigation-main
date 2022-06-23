@@ -1,0 +1,84 @@
+@use '../util' as u;
+
+.main {
+  width: min(100%, u.em(1440));
+  text-align: center;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: u.rem(50);
+  }
+
+  &__picture {
+    display: flex;
+    width: min(100%, u.rem(500));
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__intro {
+    padding-inline: u.rem(16);
+  }
+
+  &__title {
+    color: var(--clr-almost-black);
+  }
+
+  &__description {
+    color: var(--clr-medium-gray);
+    padding-block: u.rem(24);
+  }
+
+  &__link {
+    width: u.rem(136);
+    height: u.rem(48);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--clr-almost-white);
+    background-color: var(--clr-almost-black);
+    border: u.rem(2) solid var(--clr-almost-black);
+    border-radius: u.rem(12);
+    transition-duration: var(--transition-fast);
+    transition-timing-function: ease;
+    transition-property: color, background-color;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--clr-almost-black);
+      background-color: var(--clr-almost-white);
+    }
+  }
+
+  &__partners {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: u.rem(16) u.rem(26);
+    margin-block-start: u.rem(48);
+
+    &__databiz {
+      width: u.rem(82);
+      height: u.rem(16);
+    }
+
+    &__audiophile {
+      width: u.rem(54);
+      height: u.rem(28);
+    }
+
+    &__meet {
+      width: u.rem(65);
+      height: u.rem(16);
+    }
+
+    &__maker {
+      width: u.rem(59);
+      height: u.rem(18);
+    }
+  }
+}

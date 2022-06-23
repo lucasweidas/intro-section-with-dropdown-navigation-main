@@ -1,0 +1,38 @@
+@use '../util' as u;
+
+.footer {
+  text-align: center;
+  padding: u.rem(48) u.rem(16) u.rem(16);
+
+  &__attribution {
+    color: var(--clr-almost-black);
+
+    a {
+      color: var(--clr-almost-black);
+      opacity: 0.8;
+      transition: opacity var(--transition-fast) ease;
+
+      &:hover,
+      &:focus-visible {
+        opacity: 1;
+      }
+    }
+
+    .fa-heart {
+      color: hsl(0, 100%, 64%);
+      animation: heart-pulse 1000ms ease-in-out infinite;
+
+      @keyframes heart-pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.15);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

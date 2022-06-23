@@ -5,5 +5,5 @@
 }
 
 @function em($pixel) {
-  @return math.div($pixel, 16) + rem;
+  @return math.div($pixel, 16) + em;
 }

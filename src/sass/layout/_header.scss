@@ -1,7 +1,7 @@
 @use '../util' as u;
 
 .header {
-  width: min(100%, u.rem(1440));
+  width: min(100%, u.em(1440));
   display: flex;
   justify-content: space-between;
   padding: u.rem(24) u.rem(16);
@@ -46,6 +46,7 @@
     padding: u.rem(21) u.rem(20) u.rem(24) u.rem(24);
     z-index: 100;
     transform: translateX(100%);
+    transition: transform var(--transition-slow) ease;
 
     .header--active & {
       transform: translateX(0);
@@ -86,8 +87,10 @@
     align-items: center;
     column-gap: u.rem(15);
     color: var(--clr-medium-gray);
+    transition: color var(--transition-fast) ease;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
       color: var(--clr-almost-black);
     }
   }
@@ -95,6 +98,7 @@
   &__button {
     column-gap: u.rem(16);
     color: var(--clr-medium-gray);
+    transition: color var(--transition-fast) ease;
 
     &:hover {
       color: var(--clr-almost-black);
@@ -102,6 +106,10 @@
 
     &:hover path {
       stroke: var(--clr-almost-black);
+    }
+
+    & svg {
+      transition: transform var(--transition-slow) ease;
     }
 
     .header__item--active & svg {
@@ -112,7 +120,7 @@
   &__dropdown {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms ease-out;
+    transition: max-height var(--transition-slow) ease-out;
 
     .header__item--active & {
       max-height: none;
