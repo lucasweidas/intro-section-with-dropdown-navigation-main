@@ -9,11 +9,28 @@
     flex-direction: column;
     align-items: center;
     row-gap: u.rem(50);
+
+    @include u.breakpoint(medium) {
+      row-gap: u.rem(80);
+    }
+
+    @include u.breakpoint(large) {
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: flex-end;
+      column-gap: u.rem(80);
+      text-align: start;
+      padding-inline: u.rem(40) u.rem(10);
+    }
+
+    @include u.breakpoint(xlarge) {
+      column-gap: u.rem(150);
+    }
   }
 
   &__picture {
     display: flex;
-    width: min(100%, u.rem(500));
+    width: min(100%, u.rem(480));
 
     img {
       width: 100%;
@@ -22,15 +39,34 @@
 
   &__intro {
     padding-inline: u.rem(16);
+
+    @include u.breakpoint(large) {
+      padding-inline: 0;
+    }
   }
 
   &__title {
     color: var(--clr-almost-black);
+
+    @include u.breakpoint(large) {
+      max-width: u.rem(512);
+    }
   }
 
   &__description {
+    max-width: u.rem(428);
     color: var(--clr-medium-gray);
     padding-block: u.rem(24);
+    margin-inline: auto;
+
+    @include u.breakpoint(medium) {
+      padding-block: u.rem(32);
+    }
+
+    @include u.breakpoint(large) {
+      padding-block: u.rem(56);
+      margin-inline: 0;
+    }
   }
 
   &__link {
@@ -61,24 +97,38 @@
     gap: u.rem(16) u.rem(26);
     margin-block-start: u.rem(48);
 
+    @include u.breakpoint(medium) {
+      column-gap: u.rem(28);
+      margin-block-start: u.rem(64);
+    }
+
+    @include u.breakpoint(large) {
+      justify-content: flex-start;
+      margin-block-start: u.rem(106);
+    }
+
+    @include u.breakpoint(xlarge) {
+      column-gap: u.rem(40);
+    }
+
     &__databiz {
-      width: u.rem(82);
-      height: u.rem(16);
+      width: clamp(u.rem(82), 16vw, u.rem(114));
+      height: clamp(u.rem(16), 16vw, u.rem(20));
     }
 
     &__audiophile {
-      width: u.rem(54);
-      height: u.rem(28);
+      width: clamp(u.rem(54), 10vw, u.rem(73));
+      height: clamp(u.rem(28), 10vw, u.rem(36));
     }
 
     &__meet {
-      width: u.rem(65);
-      height: u.rem(16);
+      width: clamp(u.rem(65), 12vw, u.rem(90));
+      height: clamp(u.rem(16), 12vw, u.rem(20));
     }
 
     &__maker {
-      width: u.rem(59);
-      height: u.rem(18);
+      width: clamp(u.rem(59), 12vw, u.rem(83));
+      height: clamp(u.rem(18), 12vw, u.rem(24));
     }
   }
 }
