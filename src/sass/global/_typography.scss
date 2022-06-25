@@ -30,6 +30,12 @@ a:active {
   text-decoration: none;
 }
 
+.main__link {
+  @include breakpoint(medium) {
+    font-size: rem(18);
+  }
+}
+
 .footer__attribution {
   font-size: rem(14);
 

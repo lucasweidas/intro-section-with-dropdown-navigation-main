@@ -31,6 +31,12 @@ a:active {
   text-decoration: none;
 }
 
+@media (min-width: 47.75em) {
+  .main__link {
+    font-size: 1.125rem;
+  }
+}
+
 .footer__attribution {
   font-size: 0.875rem;
 }
@@ -445,6 +451,12 @@ svg * {
 .main__link:hover, .main__link:focus-visible {
   color: var(--clr-almost-black);
   background-color: var(--clr-almost-white);
+}
+@media (min-width: 47.75em) {
+  .main__link {
+    width: 10.25rem;
+    height: 3.5rem;
+  }
 }
 .main__partners {
   display: flex;

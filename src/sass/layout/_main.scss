@@ -88,6 +88,11 @@
       color: var(--clr-almost-black);
       background-color: var(--clr-almost-white);
     }
+
+    @include breakpoint(medium) {
+      width: rem(164);
+      height: rem(56);
+    }
   }
 
   &__partners {
