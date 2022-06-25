@@ -1,4 +1,4 @@
-@use '../util' as u;
+@use '../util' as *;
 
 *,
 *::after,
@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: u.$font;
+  font-family: $font;
   background-color: var(--clr-almost-white);
 }
 
