@@ -17,4 +17,10 @@ function toggleActiveClass(element) {
 function toggleDropdownMenu(evt) {
   const itemContainer = evt.target.parentElement;
   toggleActiveClass(itemContainer);
+  
+  if (itemContainer.classList.contains('active')) {
+    evt.target.setAttribute('aria-expanded', 'true');
+    return;
+  }
+  evt.target.setAttribute('aria-expanded', 'false');
 }
