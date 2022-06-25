@@ -2,19 +2,19 @@ const header = document.querySelector('[data-header');
 
 header.addEventListener('click', evt => {
   if (evt.target.matches('[data-open-btn]') || evt.target.matches('[data-close-btn]') || evt.target.matches('[data-header-overlay]')) {
-    return toggleHeaderActiveClass();
+    return toggleActiveClass(header);
   }
 
   if (evt.target.matches('[data-dropdown-btn]')) {
-    return toggleItemActiveClass(evt);
+    return toggleDropdownMenu(evt);
   }
 });
 
-function toggleHeaderActiveClass() {
-  header.classList.toggle('header--active');
+function toggleActiveClass(element) {
+  element.classList.toggle('active');
 }
 
-function toggleItemActiveClass(evt) {
+function toggleDropdownMenu(evt) {
   const itemContainer = evt.target.parentElement;
-  itemContainer.classList.toggle('header__item--active');
+  toggleActiveClass(itemContainer);
 }
