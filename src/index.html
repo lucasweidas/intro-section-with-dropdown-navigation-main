@@ -16,10 +16,10 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="css/styles.css" />
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js" defer></script>
   </head>
   <body>
-    <header class="header">
+    <header class="header" data-header>
       <a href="index.html" class="header__logo" title="Snap">
         <svg width="84" height="27" xmlns="http://www.w3.org/2000/svg">
           <path
@@ -28,13 +28,13 @@
           />
         </svg>
       </a>
-      <button class="header__open-btn" aria-label="Open Menu" aria-haspopup="menu" aria-controls="navigation" aria-expanded="false">
+      <button class="header__open-btn" data-open-btn aria-label="Open Menu" aria-haspopup="menu" aria-controls="navigation" aria-expanded="false">
         <svg width="32" height="18" xmlns="http://www.w3.org/2000/svg">
           <g fill="#151515" fill-rule="evenodd"><path d="M0 0h32v2H0zM0 8h32v2H0zM0 16h32v2H0z" /></g>
         </svg>
       </button>
       <nav class="header__nav" id="navigation">
-        <button class="header__close-btn" aria-label="Close Menu" aria-controls="navigation" aria-expanded="true">
+        <button class="header__close-btn" data-close-btn aria-label="Close Menu" aria-controls="navigation" aria-expanded="true">
           <svg width="26" height="26" xmlns="http://www.w3.org/2000/svg">
             <g fill="#151515" fill-rule="evenodd">
               <path d="m2.393.98 22.628 22.628-1.414 1.414L.979 2.395z" />
@@ -44,7 +44,7 @@
         </button>
         <ul class="header__list">
           <li class="header__item">
-            <button aria-controls="features" aria-expanded="false" class="header__button">
+            <button class="header__button" data-dropdown-btn aria-controls="features" aria-expanded="false">
               Features
               <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" /></svg>
             </button>
@@ -98,7 +98,7 @@
             </div>
           </li>
           <li class="header__item">
-            <button aria-controls="company" aria-expanded="false" class="header__button">
+            <button class="header__button" data-dropdown-btn aria-controls="company" aria-expanded="false">
               Company
               <svg width="10" height="6" xmlns="http://www.w3.org/2000/svg"><path stroke="#686868" stroke-width="1.5" fill="none" d="m1 1 4 4 4-4" /></svg>
             </button>
@@ -118,7 +118,7 @@
           <a href="#" class="header__link header__register">Register</a>
         </div>
       </nav>
-      <div class="header__overlay"></div>
+      <div class="header__overlay" data-header-overlay></div>
     </header>
 
     <main class="main">

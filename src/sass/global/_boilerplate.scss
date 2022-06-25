@@ -29,3 +29,8 @@ button {
 ul {
   list-style: none;
 }
+
+svg,
+svg * {
+  pointer-events: none;
+}

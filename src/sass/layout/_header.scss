@@ -50,7 +50,7 @@
     position: fixed;
     top: 0;
     right: 0;
-    background-color: var(--clr-almost-white);
+    background-color: var(--clr-white);
     padding: u.rem(21) u.rem(20) u.rem(24) u.rem(24);
     z-index: 100;
     transform: translateX(100%);
@@ -67,13 +67,13 @@
 
     @include u.breakpoint(large) {
       width: 100%;
-      // width: u.rem(196);
       min-height: auto;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
       column-gap: u.rem(40);
       position: static;
+      background-color: transparent;
       padding: 0;
       transform: translateX(0);
       transition: none;
@@ -141,19 +141,19 @@
   &__dropdown {
     max-height: 0;
     overflow: hidden;
-    opacity: 0;
-    transition: max-height var(--transition-slow) ease-out;
+    visibility: hidden;
 
     .header__item--active & {
-      max-height: none;
-      opacity: 1;
+      max-height: 100vh;
+      visibility: visible;
+      transition: max-height var(--transition-slow) ease-in;
     }
 
     @include u.breakpoint(large) {
       position: absolute;
       top: u.rem(34);
       background-color: var(--clr-white);
-      box-shadow: 0 4px 20px 5px hsla(0, 0%, 0%, 0.15);
+      box-shadow: 0 4px 25px 5px hsla(0, 0%, 0%, 0.12);
       border-radius: u.rem(8);
 
       &#features {
@@ -171,6 +171,7 @@
       padding-inline-start: u.rem(24);
 
       @include u.breakpoint(large) {
+        row-gap: u.rem(16);
         padding: u.rem(24);
       }
     }
@@ -195,7 +196,6 @@
   }
 
   &__register {
-    // width: u.rem(196);
     width: 100%;
     height: u.rem(42);
     justify-content: center;
@@ -224,6 +224,10 @@
 
     .header--active & {
       display: block;
+    }
+
+    @include u.breakpoint(large) {
+      display: none !important;
     }
   }
 }
